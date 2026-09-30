@@ -334,7 +334,8 @@ app = FastAPI(title='EstateAI - Premium AI Real Estate Sales Platform', version=
 async def persistence_middleware(request: Request, call_next):
     if request.method in {'POST', 'PUT', 'PATCH', 'DELETE'} and request.url.path.startswith('/api/'):
         import time
-        key = request.client.host if request.client else 'unknown'
+        forwarded = request.headers.get('x-forwarded-for', '').strip()
+        key = forwarded.split(',')[0].strip() if forwarded else (request.client.host if request.client else 'unknown')
         bucket = request.method + ':' + request.url.path + ':' + key
         now_ts = time.time()
         with _RATE_LOCK:
