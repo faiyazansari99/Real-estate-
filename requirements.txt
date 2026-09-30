@@ -1,0 +1,10 @@
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
+gunicorn==23.0.0
+python-multipart==0.0.20
+requests==2.32.3
+pydantic==2.9.2
+python-dotenv==1.1.0
+argon2-cffi==23.1.0
+cloudinary==1.41.0
+psycopg[binary]==3.2.9
