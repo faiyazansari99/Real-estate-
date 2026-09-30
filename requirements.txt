@@ -1,8 +1,10 @@
-fastapi
-uvicorn[standard]
-psycopg[binary,pool]
-pydantic
-python-dotenv
-argon2-cffi
-requests
+fastapi==0.115.12
+uvicorn[standard]==0.34.0
+gunicorn==23.0.0
+psycopg[binary,pool]==3.2.9
+pydantic==2.11.3
+python-dotenv==1.1.0
+argon2-cffi==23.1.0
+requests==2.32.3
 Pillow==11.1.0
+cloudinary==1.41.0
